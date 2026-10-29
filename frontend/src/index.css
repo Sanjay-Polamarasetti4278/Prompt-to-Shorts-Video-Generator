@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom glow effects & animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px -5px rgba(236, 72, 153, 0.3), 0 0 10px -5px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px 0px rgba(236, 72, 153, 0.5), 0 0 20px 2px rgba(168, 85, 247, 0.6);
+  }
+}
+
+.glow-box {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* 9:16 safe zones styling */
+.safe-zone-overlay {
+  pointer-events: none;
+}
+
+.safe-zone-danger {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(239, 68, 68, 0.08),
+    rgba(239, 68, 68, 0.08) 10px,
+    rgba(239, 68, 68, 0.16) 10px,
+    rgba(239, 68, 68, 0.16) 20px
+  );
+  border: 1px dashed rgba(239, 68, 68, 0.4);
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
